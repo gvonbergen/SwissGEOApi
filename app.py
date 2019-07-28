@@ -34,6 +34,10 @@ class SwissIdentifier:
 
 api = application = falcon.API()
 
+path = '/var/www/webroot/ROOT'
+if path not in sys.path:
+    sys.path.append(path)
+
 identifier = SwissIdentifier()
 
 api.add_route('/ident', identifier)
